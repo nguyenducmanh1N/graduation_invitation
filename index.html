@@ -61,39 +61,35 @@
       margin-top: 10px;
       font-weight: 400;
     }
-    .portrait-frame {
-      width: 90%;
-      max-width: 320px;
-      height: 220px;
-      margin: 0 auto 18px auto;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 3px solid #fff;
-      box-shadow: 0 0 0 3px #90a4ae;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    portrait-frame {
+    display: inline-block;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #90a4ae;
+    background: #fff;
+    margin: 0 auto 18px auto;
+    /* Không đặt width/height cố định */
     }
     .portrait-carousel {
-      width: 100%;
-      height: 100%;
-      position: relative;
+        display: inline-block;
+        position: relative;
     }
     .portrait-carousel img {
-      position: absolute;
-      left: 0; top: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 14px;
-      opacity: 0;
-      transition: opacity 0.7s;
-      z-index: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+        opacity: 0;
+        position: absolute;
+        left: 0; top: 0;
+        transition: opacity 0.7s;
+        z-index: 1;
     }
     .portrait-carousel img.active {
-      opacity: 1;
-      z-index: 2;
+        opacity: 1;
+        position: relative;
+        z-index: 2;
     }
     .invite-content .life-of {
       font-family: 'Montserrat', sans-serif;
@@ -173,12 +169,22 @@
     </div>
   </div>
   <script>
-    let idx = 0;
     const imgs = document.querySelectorAll('.portrait-carousel img');
+    let idx = 0;
+    imgs.forEach((img, i) => {
+        img.onload = function () {
+            if (i === 0) {
+                // Set parent size to first image size
+                const pf = document.querySelector('.portrait-frame');
+                pf.style.width = img.naturalWidth + 'px';
+                pf.style.height = img.naturalHeight + 'px';
+            }
+        }
+    });
     setInterval(() => {
-      imgs[idx].classList.remove('active');
-      idx = (idx + 1) % imgs.length;
-      imgs[idx].classList.add('active');
+        imgs[idx].classList.remove('active');
+        idx = (idx + 1) % imgs.length;
+        imgs[idx].classList.add('active');
     }, 2500);
-  </script>
+</script>
 </body>
