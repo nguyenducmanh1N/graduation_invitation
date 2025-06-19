@@ -29,7 +29,7 @@
             height: 100vh;
             aspect-ratio: 3/4;
             background: url('flower-background.png') no-repeat center center/cover;
-            /* Đổi 'your-flower-background.png' thành tên file nền hoa bạn vừa gửi */
+            
             border-radius: 12px;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
             position: relative;
@@ -41,6 +41,7 @@
             overflow: hidden;
             background-size: cover;
         }
+        
 
         .invite-content {
             width: 90%;
@@ -125,9 +126,8 @@
 
         @media (max-width: 500px) {
             .invite-bg {
-                max-width: 99vw;
-                width: 99vw;
-            }
+        background-size: cover;
+    }
 
             .invite-content {
                 width: 97%;
