@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Invitation - Katherine Mitchell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Lora:700&display=swap" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .invite-bg {
+            width: 95vw;
+            max-width: 420px;
+            aspect-ratio: 3/4;
+            background: url('flower-background.png') no-repeat center center/cover;
+            /* Đổi 'your-flower-background.png' thành tên file nền hoa bạn vừa gửi */
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .invite-content {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: 32px;
+        }
+
+        .invite-content .top-text {
+            font-family: 'Montserrat', sans-serif;
+            color: #b39c7b;
+            font-size: 1.1em;
+            margin-bottom: 18px;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        .invite-content .portrait-frame {
+            width: 120px;
+            height: 160px;
+            margin: 0 auto 18px auto;
+            background: #222;
+            border-radius: 60px 60px 0 0 / 90px 90px 0 0;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .invite-content .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 60px 60px 0 0 / 90px 90px 0 0;
+            display: block;
+        }
+
+        .invite-content .life-of {
+            font-family: 'Montserrat', sans-serif;
+            color: #888;
+            font-size: 1.1em;
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        .invite-content .name {
+            font-family: 'Lora', serif;
+            color: #6b7bb2;
+            font-size: 2em;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            letter-spacing: 1px;
+        }
+
+        .invite-content .date {
+            font-family: 'Montserrat', sans-serif;
+            color: #6b7bb2;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .invite-content .address {
+            font-family: 'Montserrat', sans-serif;
+            color: #444;
+            font-size: 1em;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .invite-content .note {
+            font-family: 'Montserrat', sans-serif;
+            color: #b39c7b;
+            font-size: 0.98em;
+            margin-bottom: 0;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 500px) {
+            .invite-bg {
+                max-width: 99vw;
+                width: 99vw;
+            }
+
+            .invite-content {
+                width: 97%;
+                margin-top: 18px;
+            }
+
+            .invite-content .portrait-frame {
+                width: 90px;
+                height: 120px;
+            }
+
+            .invite-content .name {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invite-bg">
+        <div class="invite-content">
+            <div class="top-text">You're Invited To Celebrate</div>
+            <div class="portrait-frame">
+                <img src="tuoi.png" alt="Portrait">
+                <!-- Đổi portrait.jpg thành ảnh chân dung của bạn -->
+            </div>
+            <div class="life-of">The Life Of</div>
+            <div class="name">Katherine Mitchell</div>
+            <div class="date">SEPTEMBER 15 | 1:00 PM</div>
+            <div class="address">
+                Evergreen Memorial Chapel,<br>
+                500 Serenity Lane, Boston, MA<br>
+                02108
+            </div>
+            <div class="note">
+                A remembrance ceremony will be followed by a light reception.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
