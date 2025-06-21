@@ -29,17 +29,19 @@
         }
 
         .invite-bg {
-            width: 100vw;
-            height: 100vh;
-            background: url('flower-background.png') no-repeat center center;
-            background-size: 100% 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: auto;
+        /* Sử dụng background-size: contain để nền vừa với nội dung */
+        background: url('flower-background.png') no-repeat center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 
         @media (max-width: 600px) {
             .invite-bg {
