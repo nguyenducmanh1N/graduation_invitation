@@ -203,6 +203,35 @@
                 font-size: 1.3em;
             }
         }
+        @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add animation to each content block */
+.invite-content > * {
+    opacity: 0;
+    animation: fadeInUp 0.7s forwards;
+}
+
+.invite-content > br {
+    animation: none !important;
+    opacity: 0;
+}
+
+.invite-content .top-text { animation-delay: 0.2s; }
+.invite-content .portrait-frame { animation-delay: 0.5s; }
+.invite-content .life-of { animation-delay: 0.8s; }
+.invite-content .name { animation-delay: 1.1s; }
+.invite-content .date { animation-delay: 1.4s; }
+.invite-content .address { animation-delay: 1.7s; }
+.invite-content .note { animation-delay: 2s; }
     </style>
 </head>
 
@@ -227,7 +256,7 @@
             <div class="address">
                 Học viện Báo Chí Tuyên Truyền<br>
                 36 Đ.Xuân Thủy, Dịch Vọng hậu, Cầu Giấy, Hà Nội<br>
-                02108
+                
             </div>
             <div class="note">
                
@@ -305,6 +334,11 @@
             }
             startX = null;
         });
+        window.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('.invite-content > *').forEach(el => {
+                    el.style.opacity = '';
+                });
+            });
     </script>
 </body>
 
